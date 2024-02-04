@@ -7,7 +7,7 @@ from llama_index.readers import SimpleWebPageReader
 from ragas import evaluate
 from ragas.metrics import answer_relevancy, faithfulness
 
-def evaluate_model(model, data_file):
+def evaluate_model(model_name, data_file):
     questions = []
     with open(data_file, "r") as f:
         for line in f:
@@ -19,7 +19,7 @@ def evaluate_model(model, data_file):
 
     # limit the context window to 2048 tokens so that refine is used
     service_context = ServiceContext.from_defaults(
-        llm=OpenAI(model=model, temperature=0.1), context_window=2048
+        llm=OpenAI(model=model_name, temperature=0.1), context_window=2048
     )
 
     index = VectorStoreIndex.from_documents(documents)
