@@ -1,0 +1,9 @@
+fastapi
+llama-index
+beautifulsoup4
+requests
+pydantic
+tiktoken
+datasets
+ragas
+uvicorn
