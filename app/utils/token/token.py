@@ -1,15 +1,7 @@
 import tiktoken
 import numpy as np
-# from tiktoken import count_tokens
 
 encoding = tiktoken.get_encoding("cl100k_base")
-
-# def count_tokens_in_prompt(prompt):
-#     # Define the prompt
-#     prompt_tokens = count_tokens(prompt)
-
-#     # Print the result
-#     print(f'Token count in prompt: {prompt_tokens}')
 
 def count_tokens_in_prompt(prompt):
     tokens = encoding.encode(
