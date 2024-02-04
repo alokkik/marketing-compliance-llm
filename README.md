@@ -15,7 +15,7 @@ OPENAI_API_KEY=sk-F3Jo***********************************VnDGP
 6. Finally, run ```uvicorn app.main:app```
 
 ### Curl :-
-``` There are two way I decided to approach this. One is, RAG(Retrieval Augmentation) and FSCOT(Few Shot Chain of Thought) model ```
+``` There are two ways I decided to approach this. One is, RAG(Retrieval Augmentation) and FSCOT(Few Shot Chain of Thought) model ```
 ##### RAG Model
 ```
 curl -X 'POST' \
