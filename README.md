@@ -13,6 +13,7 @@ OPENAI_API_KEY=sk-F3Jo***********************************VnDGP
    Run ```1. set -a``` ```2. source .env``` ```3. set +a``` to set env variables. Or, export them manually ```export VAR=value``` in terminal.
 5. Now, install dependencies ```pip3 install -r requirements.txt```.
 6. Finally, run ```uvicorn app.main:app```
+7. go to http://localhost:8000/docs
 
 ### Curl :-
 ``` There are two ways I decided to approach this. One is, RAG(Retrieval Augmentation) and Zero Shot ```
