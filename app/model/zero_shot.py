@@ -6,7 +6,7 @@ from llama_index.llms import OpenAI
 from llama_index.prompts import PromptTemplate
 from os import environ
 
-class Fscot(AbstractLLM): # Few Shot Chain of Thought
+class ZeroShot(AbstractLLM):
     def __init__(self, temperature=0.1, model="gpt-3.5-turbo"):
         self.llm = OpenAI(temperature=temperature, model=model)
         self.context_str = scrape_stripe_treasury_marketing_policy(environ["STRIPE_URL"])

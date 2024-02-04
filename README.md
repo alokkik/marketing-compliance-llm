@@ -15,7 +15,7 @@ OPENAI_API_KEY=sk-F3Jo***********************************VnDGP
 6. Finally, run ```uvicorn app.main:app```
 
 ### Curl :-
-``` There are two ways I decided to approach this. One is, RAG(Retrieval Augmentation) and FSCOT(Few Shot Chain of Thought) model ```
+``` There are two ways I decided to approach this. One is, RAG(Retrieval Augmentation) and Zero Shot ```
 ##### RAG Model
 ```
 curl -X 'POST' \
@@ -27,7 +27,7 @@ curl -X 'POST' \
 }'
 ```
 
-##### FSCOT Model
+##### Zero Shot Model
 ```
 curl -X 'POST' \
   'http://localhost:8000/fscot' \

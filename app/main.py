@@ -1,7 +1,7 @@
 from os import environ
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from app.model.fscot import Fscot
+from app.model.zero_shot import ZeroShot
 from app.model.rag import Rag
 from llama_index.readers import SimpleWebPageReader
 from app.template.template import *
@@ -15,8 +15,8 @@ app = FastAPI()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# FSCOT
-fscot = Fscot()  # Few Shot Chain of Thought
+# Zero shot
+zero_shot= ZeroShot()
 class FewShotLLMRequest(BaseModel):
     url: str
 
@@ -32,13 +32,13 @@ def save_results_to_file(results, file_name, logger):
     logger.info(f"Results saved to: {file_path}")
 
 
-@app.post("/fscot")
+@app.post("/zero_shot")
 async def few_shot_llm(request: FewShotLLMRequest):
     try:
-        text_to_check_for_compliance = fscot.get_specific_text(request.url)
-        result = fscot.check_for_compliance(text_to_check_for_compliance, fscot_compliance_template)
-        save_results_to_file(result, f"fscot_results_{datetime.now().strftime('%Y%m%d%H%M%S')}.json", logger)
-        logger.info("FSCOT compliance check successful")
+        text_to_check_for_compliance = zero_shot.get_specific_text(request.url)
+        result = zero_shot.check_for_compliance(text_to_check_for_compliance, zero_shot_compliance_template)
+        save_results_to_file(result, f"zeroShot_results_{datetime.now().strftime('%Y%m%d%H%M%S')}.json", logger)
+        logger.info("ZeroShot compliance check successful")
         logger.info(f"Non-compliant results: {result}")
         return {"non_complaint_results": result}
     except Exception as e:

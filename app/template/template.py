@@ -12,7 +12,7 @@ rag_suggestion_template = (
     "As the Marketing Compliance Specialist, review the following phrases that currently do not comply with the Stripe compliance policy. Provide thoughtful suggestions on how to rephrase each phrase, ensuring compliance with the Stripe policy on information handling. Your expertise is crucial in aligning these expressions with regulatory standards and organizational policies.\n\n{query_str}"
 )
 
-fscot_compliance_template = template = (
+zero_shot_compliance_template = template = (
     """
     {context_str}
     ---------------
