@@ -1,5 +1,10 @@
 # marketing-compliance-llm
 
+```
+# set below variables in your .env unless using export
+STRIPE_URL=https://stripe.com/docs/treasury/marketing-treasury
+OPENAI_API_KEY=sk-F3Jo***********************************VnDGP
+```
 ### How to run the application on your local:
 1. Go to ```marketing-compliance-llm```
 2. To create a ```.venv```, run ```python3 -m venv .venv```
